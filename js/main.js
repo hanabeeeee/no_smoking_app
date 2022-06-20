@@ -1,4 +1,6 @@
-let startDay = new Date('2022-05-01').getTime(); // 금연시작일
+function changeDay(inputDay) {
+    //startDay 입력한 날짜로 계산
+let startDay = new Date(inputDay).getTime(); // 금연시작일
 let today = new Date().getTime(); // 오늘
 
 // 경과일 = 오늘 - 금연시작한날
@@ -13,6 +15,15 @@ intResult = Math.floor(result);
 // 시간 표시
 document.getElementById('day').innerHTML = intResult;
 // $('#day').html(result);
+
+}
+
+$('#date').change(function(){
+console.log('변경')
+let val = $(this).val()
+console.log(val);
+changeDay(val);
+})
 
 
 /**** 기능 개선
